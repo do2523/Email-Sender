@@ -7,10 +7,10 @@ html =Template( Path("index.html").read_text())
 email = EmailMessage()
 email['from'] = "Daniel Ocampo"
 email["to"] = "ocampomary34@gmail.com"
-email["subject"] = "New Task"
+email["subject"] = "Urgent Message"
 
 
-email.set_content(html.substitute({"name":"Jerry"}))
+email.set_content(html.substitute({"name":"Daniel"}), 'html')
 
 with smtplib.SMTP(host='smtp.gmail.com', port=587) as smtp:
     smtp.ehlo()  # part of smtp protocol
